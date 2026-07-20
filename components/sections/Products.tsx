@@ -20,9 +20,19 @@ export function Products() {
             <p className="mb-8 mt-4 max-w-[46ch] text-base leading-relaxed sm:text-lg">
               {product.description}
             </p>
-            <PillLink href={product.link.href} variant="ghost" className="mt-auto">
-              {product.link.label}
-            </PillLink>
+            {product.link.href === "#" ? (
+              <span className="mt-auto inline-flex items-center justify-center rounded-pill border-[1.5px] border-obsidian px-7 py-3.5 text-base">
+                {product.link.label}
+              </span>
+            ) : (
+              <PillLink
+                href={product.link.href}
+                variant="ghost"
+                className="mt-auto"
+              >
+                {product.link.label}
+              </PillLink>
+            )}
           </article>
         ))}
       </div>

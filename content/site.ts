@@ -69,6 +69,12 @@ export const site = {
     label: "Drew + Ollie — Devon, UK",
   },
 
+  skipLink: { label: "Skip to content", href: "#main" } satisfies Cta,
+
+  statRow: {
+    label: "Studio in numbers",
+  },
+
   stats: [
     { value: "2", label: "Founders" },
     { value: "2", label: "Products live" },

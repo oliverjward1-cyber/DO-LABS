@@ -2,7 +2,7 @@ import { site } from "@/content/site";
 
 export function StatRow() {
   return (
-    <section aria-label="Studio in numbers">
+    <section aria-label={site.statRow.label}>
       <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5">
         {site.stats.map((stat) => (
           <div

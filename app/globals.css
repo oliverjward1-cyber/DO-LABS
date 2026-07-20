@@ -45,7 +45,8 @@
     linear-gradient(135deg, var(--color-plasma) 0%, var(--color-ember) 100%);
 }
 
-/* The plasma accent block: solid plasma with a faint ember glow. */
+/* The plasma accent block: same treatment, weighted plasma so the block
+   stays the page's one violet moment. */
 @utility halftone-surface-plasma {
   background-image:
     radial-gradient(
@@ -53,7 +54,12 @@
       rgb(252 80 0 / 0.4) 0%,
       rgb(252 80 0 / 0) 45%
     ),
-    linear-gradient(135deg, var(--color-plasma) 0%, var(--color-plasma) 100%);
+    linear-gradient(
+      135deg,
+      var(--color-plasma) 0%,
+      var(--color-plasma) 50%,
+      var(--color-ember) 100%
+    );
 }
 
 /* Dot overlay for halftone blocks (screen-blended CSS dots, no image). */
@@ -94,7 +100,12 @@ body {
 :focus-visible {
   outline: 3px solid currentColor;
   outline-offset: 3px;
-  border-radius: 2px;
+}
+
+/* The offset ring around ember pills lands on the light page surface,
+   where chalk would vanish — use obsidian there instead. */
+.bg-ember:focus-visible {
+  outline-color: var(--color-obsidian);
 }
 
 ::selection {

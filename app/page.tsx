@@ -7,15 +7,16 @@ import { Products } from "@/components/sections/Products";
 import { StatRow } from "@/components/sections/StatRow";
 import { Studio } from "@/components/sections/Studio";
 import { DottedDivider } from "@/components/ui/DottedDivider";
+import { site } from "@/content/site";
 
 export default function Home() {
   return (
     <div id="top" className="mx-auto max-w-[1200px] px-4 py-4 sm:px-6 sm:py-6">
       <a
-        href="#main"
+        href={site.skipLink.href}
         className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-10 focus:rounded-pill focus:bg-obsidian focus:px-6 focus:py-3 focus:text-chalk"
       >
-        Skip to content
+        {site.skipLink.label}
       </a>
       <Nav />
       <main id="main">

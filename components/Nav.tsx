@@ -17,7 +17,7 @@ export function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base hover:text-ember motion-safe:transition-colors"
+                className="text-base hover:underline hover:underline-offset-4"
               >
                 {link.label}
               </a>

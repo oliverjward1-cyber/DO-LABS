@@ -13,7 +13,7 @@ export function Footer() {
               {item.href ? (
                 <a
                   href={item.href}
-                  className="hover:text-ember motion-safe:transition-colors"
+                  className="hover:underline hover:underline-offset-4"
                 >
                   {item.label}
                 </a>
