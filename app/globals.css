@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/*
+ * D.O Labs design system — Caldera-style.
+ * Flat, warm, bold, shadowless. Surfaces separate by color only
+ * (pumice → limestone → ember); never by elevation.
+ */
+@theme {
+  /* Colors */
+  --color-ember: #fc5000; /* primary buttons, stat cards — the only aggressive accent */
+  --color-plasma: #524ae9; /* halftone blocks ONLY — never on buttons/controls/text */
+  --color-sulfur: #f5f28e; /* tag/badge pills only */
+  --color-limestone: #f7f6f2; /* card surfaces, nav pill, footer pill */
+  --color-pumice: #e2e2df; /* page background */
+  --color-obsidian: #070607; /* all text, borders */
+  --color-chalk: #ffffff; /* text on dark/ember/plasma surfaces */
+
+  /* Fonts (loaded via next/font in app/layout.tsx) */
+  --font-display: var(--font-anton); /* Anton 400 — ALL CAPS, +0.02em, lh 0.94, never below 26px */
+  --font-body: var(--font-dm-sans); /* DM Sans 500 only */
+
+  /* Radii: cards/blocks/footer 40px; pills full. Nothing between 1px and 39px. */
+  --radius-card: 40px;
+  --radius-pill: 800px;
+}
+
+/* Display type: the only way Anton is used. Letter-spacing is positive. */
+@utility display-type {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.94;
+}
+
+/* Halftone treatment: plasma→ember 135deg gradient with a radial ember
+   glow top-right. Pure CSS, no images. */
+@utility halftone-surface {
+  background-image:
+    radial-gradient(
+      120% 130% at 90% 0%,
+      rgb(252 80 0 / 0.9) 0%,
+      rgb(252 80 0 / 0) 55%
+    ),
+    linear-gradient(135deg, var(--color-plasma) 0%, var(--color-ember) 100%);
+}
+
+/* The plasma accent block: solid plasma with a faint ember glow. */
+@utility halftone-surface-plasma {
+  background-image:
+    radial-gradient(
+      110% 120% at 92% 105%,
+      rgb(252 80 0 / 0.4) 0%,
+      rgb(252 80 0 / 0) 45%
+    ),
+    linear-gradient(135deg, var(--color-plasma) 0%, var(--color-plasma) 100%);
+}
+
+/* Dot overlay for halftone blocks (screen-blended CSS dots, no image). */
+@utility halftone-dots {
+  background-image: radial-gradient(
+    circle,
+    rgb(255 255 255 / 0.38) 1.5px,
+    transparent 1.6px
+  );
+  background-size: 13px 13px;
+  mix-blend-mode: screen;
+}
+
+/* Dotted (not dashed) 1.5px obsidian divider. */
+@utility divider-dotted {
+  border-top: 1.5px dotted var(--color-obsidian);
+}
+
+html {
+  background-color: var(--color-pumice);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--color-pumice);
+  color: var(--color-obsidian);
+  font-family: var(--font-body);
+  font-weight: 500; /* DM Sans stays 500 everywhere — never 400/700 */
+}
+
+/* Visible keyboard focus on every surface: currentColor keeps it obsidian
+   on light surfaces and chalk on ember/plasma/obsidian surfaces. */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: var(--color-ember);
+  color: var(--color-chalk);
+}

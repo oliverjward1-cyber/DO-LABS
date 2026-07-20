@@ -1,0 +1,29 @@
+import { site } from "@/content/site";
+
+export function Footer() {
+  return (
+    <footer className="rounded-card bg-limestone px-8 py-10 sm:px-12 sm:py-14">
+      <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
+        <p className="display-type text-[clamp(3.5rem,11vw,9rem)]">
+          {site.footer.wordmark}
+        </p>
+        <ul className="flex flex-col gap-2 text-base lg:items-end">
+          {site.footer.meta.map((item) => (
+            <li key={item.label}>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  className="hover:text-ember motion-safe:transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                item.label
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,33 @@
+import { site } from "@/content/site";
+import { PillLink } from "@/components/ui/PillLink";
+
+export function Nav() {
+  return (
+    <header>
+      <nav
+        aria-label="Main"
+        className="flex items-center justify-between gap-4 rounded-pill bg-limestone py-3 pl-7 pr-3"
+      >
+        <a href="#top" className="display-type text-[26px]">
+          {site.wordmark}
+        </a>
+        <div className="flex items-center gap-2 sm:gap-7">
+          <div className="hidden items-center gap-7 sm:flex">
+            {site.nav.links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-base hover:text-ember motion-safe:transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <PillLink href={site.nav.cta.href} className="px-6 py-2.5">
+            {site.nav.cta.label}
+          </PillLink>
+        </div>
+      </nav>
+    </header>
+  );
+}
