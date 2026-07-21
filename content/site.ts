@@ -13,10 +13,14 @@ export type Cta = {
   href: string;
 };
 
+/** Bespoke line-art drawn behind each stat number. */
+export type StatMotif = "bars" | "timeline" | "hills" | "commits";
+
 export type Stat = {
   /** Big Anton value, e.g. "3", "'25" or "Devon" */
   num: string;
   label: string;
+  motif: StatMotif;
 };
 
 export type Product = {
@@ -78,11 +82,11 @@ export const site = {
   },
 
   stats: [
-    { num: "3", label: "Products in the works" },
-    { num: "'25", label: "Studio started" },
-    { num: "Devon", label: "Where we build" },
+    { num: "3", label: "Products in the works", motif: "bars" },
+    { num: "'25", label: "Studio started", motif: "timeline" },
+    { num: "Devon", label: "Where we build", motif: "hills" },
     // Commits shipped — edit this number by hand (git rev-list --count HEAD).
-    { num: "6", label: "Commits shipped" },
+    { num: "6", label: "Commits shipped", motif: "commits" },
   ] satisfies Stat[],
 
   products: {
