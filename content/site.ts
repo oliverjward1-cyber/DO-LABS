@@ -43,6 +43,8 @@ export const site = {
     title: "D.O Labs — a two-person software studio",
     description:
       "D.O Labs is Drew and Ollie: a two-person indie software studio in Devon, UK, building small, honest products and shipping them in public.",
+    /** Production URL — used for canonical + Open Graph / Twitter tags. */
+    url: "https://dolabs.co.uk",
   },
 
   nav: {
@@ -79,7 +81,8 @@ export const site = {
     { num: "3", label: "Products in the works" },
     { num: "'25", label: "Studio started" },
     { num: "Devon", label: "Where we build" },
-    { num: "TODO", label: "Commits shipped" },
+    // Commits shipped — edit this number by hand (git rev-list --count HEAD).
+    { num: "6", label: "Commits shipped" },
   ] satisfies Stat[],
 
   products: {
@@ -112,6 +115,8 @@ export const site = {
   buildInPublic: {
     title: "We build in public",
     body: "Right now that means signing HospoPilot's first restaurants and getting Arca ready to come back. We share the work as it happens — what ships, what stalls, and what we learn along the way.",
+    // Points at the X profile below. Update the href when the handle is set.
+    cta: { label: "Follow along on X", href: "https://x.com/" } satisfies Cta,
   },
 
   studio: {
@@ -138,6 +143,13 @@ export const site = {
       { label: "hello@dolabs.co.uk", href: "mailto:hello@dolabs.co.uk" },
     ] as { label: string; href?: string }[],
   },
+
+  // Social / build-in-public links. Replace the placeholder hrefs with real
+  // profile URLs (or delete a line to drop that link everywhere it renders).
+  social: [
+    { label: "X", href: "https://x.com/" }, // TODO: paste handle, e.g. https://x.com/dolabs
+    { label: "GitHub", href: "https://github.com/" }, // TODO: paste org/user or delete this line
+  ] satisfies Cta[],
 } as const;
 
 export type Site = typeof site;

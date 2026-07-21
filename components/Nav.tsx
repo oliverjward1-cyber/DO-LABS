@@ -11,12 +11,23 @@ export function Nav() {
         <a href="#top" className="display-type text-[26px]">
           {site.wordmark}
         </a>
-        <div className="flex items-center gap-2 sm:gap-7">
-          <div className="hidden items-center gap-7 sm:flex">
+        <div className="flex items-center gap-2 sm:gap-6">
+          <div className="hidden items-center gap-6 sm:flex">
             {site.nav.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
+                className="text-base hover:underline hover:underline-offset-4"
+              >
+                {link.label}
+              </a>
+            ))}
+            {site.social.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-base hover:underline hover:underline-offset-4"
               >
                 {link.label}

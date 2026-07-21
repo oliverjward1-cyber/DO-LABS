@@ -15,9 +15,19 @@ export function BuildInPublic() {
         <h2 className="display-type max-w-[10ch] text-[clamp(2.75rem,7vw,6rem)] text-chalk">
           {site.buildInPublic.title}
         </h2>
-        <p className="max-w-[44ch] text-lg leading-relaxed text-chalk sm:text-xl">
-          {site.buildInPublic.body}
-        </p>
+        <div className="flex max-w-[44ch] flex-col gap-4">
+          <p className="text-lg leading-relaxed text-chalk sm:text-xl">
+            {site.buildInPublic.body}
+          </p>
+          <a
+            href={site.buildInPublic.cta.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit text-base text-chalk underline underline-offset-4 hover:no-underline"
+          >
+            {site.buildInPublic.cta.label} →
+          </a>
+        </div>
       </div>
     </section>
   );

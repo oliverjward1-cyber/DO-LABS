@@ -7,10 +7,11 @@ export function StatRow() {
         {site.stats.map((stat) => (
           <div
             key={stat.label}
-            className="flex min-h-[180px] flex-col justify-between rounded-card bg-ember p-7 text-chalk sm:min-h-[220px] sm:p-8"
+            className="flex min-h-[240px] flex-col justify-between rounded-card bg-ember p-7 text-chalk sm:min-h-[300px] sm:p-8"
           >
-            <dt className="order-2 text-base">{stat.label}</dt>
-            <dd className="display-type order-1 text-[clamp(2.75rem,5.5vw,4.5rem)]">
+            {/* Label small on top, big Anton number planted at the bottom. */}
+            <dt className="text-base">{stat.label}</dt>
+            <dd className="display-type text-[clamp(2.75rem,5.5vw,4.5rem)]">
               {stat.num}
             </dd>
           </div>

@@ -7,22 +7,42 @@ export function Footer() {
         <p className="display-type text-[clamp(3.5rem,11vw,9rem)]">
           {site.footer.wordmark}
         </p>
-        <ul className="flex flex-col gap-2 text-base lg:items-end">
-          {site.footer.meta.map((item) => (
-            <li key={item.label}>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  className="hover:underline hover:underline-offset-4"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                item.label
-              )}
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col gap-5 lg:items-end">
+          <ul className="flex flex-col gap-2 text-base lg:items-end">
+            {site.footer.meta.map((item) => (
+              <li key={item.label}>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  item.label
+                )}
+              </li>
+            ))}
+          </ul>
+          <ul className="flex flex-row gap-5 text-base">
+            {site.social.map((item) => {
+              const external = item.href.startsWith("http");
+              return (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    {...(external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className="hover:underline hover:underline-offset-4"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </footer>
   );

@@ -16,8 +16,21 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.meta.url),
   title: site.meta.title,
   description: site.meta.description,
+  openGraph: {
+    type: "website",
+    title: site.meta.title,
+    description: site.meta.description,
+    url: site.meta.url,
+    siteName: site.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.meta.title,
+    description: site.meta.description,
+  },
 };
 
 export const viewport: Viewport = {
