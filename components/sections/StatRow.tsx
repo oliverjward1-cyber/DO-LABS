@@ -1,12 +1,23 @@
 import type { CSSProperties } from "react";
-import { site } from "@/content/site";
+import { site, type StatMotif as StatMotifType } from "@/content/site";
 import { CountUp } from "@/components/ui/CountUp";
 import { StatMotif } from "@/components/ui/StatMotif";
+
+// Bento placement per motif: bars = tall (left), commits = wide (top-right),
+// timeline + hills fill the bottom-right pair. Mobile is a 2-col bento
+// (tall bars beside a stacked pair, commits full-width below); desktop is a
+// 6-col × 2-row arrangement.
+const span: Record<StatMotifType, string> = {
+  bars: "row-span-2 lg:col-start-1 lg:row-start-1 lg:col-span-2 lg:row-span-2",
+  commits: "col-span-2 lg:col-start-3 lg:row-start-1 lg:col-span-4 lg:row-span-1",
+  timeline: "lg:col-start-3 lg:row-start-2 lg:col-span-2",
+  hills: "lg:col-start-5 lg:row-start-2 lg:col-span-2",
+};
 
 export function StatRow() {
   return (
     <section aria-label={site.statRow.label}>
-      <dl className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5">
+      <dl className="grid grid-cols-2 gap-4 [grid-auto-rows:minmax(150px,auto)] lg:grid-cols-6 lg:gap-5 lg:[grid-auto-rows:190px]">
         {site.stats.map((stat, i) => {
           // Only pure integers count up; '25, DEVON, ∞ just fade in.
           const numeric = /^\d+$/.test(stat.num);
@@ -14,14 +25,14 @@ export function StatRow() {
             <div
               key={stat.label}
               style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
-              className="reveal stat-card relative flex min-h-[240px] flex-col justify-between overflow-hidden rounded-card bg-ember p-7 text-chalk motion-safe:hover:scale-[1.02] sm:min-h-[300px] sm:p-8"
+              className={`reveal stat-card relative flex flex-col justify-between overflow-hidden rounded-card bg-ember p-7 text-chalk motion-safe:hover:scale-[1.02] sm:p-8 ${span[stat.motif]}`}
             >
               {/* Subtle dot texture, tying the cards to the halftone band. */}
               <span aria-hidden className="card-dots pointer-events-none absolute inset-0" />
-              {/* Bespoke line-art motif filling the middle, behind the number. */}
+              {/* Bespoke line-art motif filling the cell, behind the number. */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-x-6 top-16 bottom-24 opacity-40 sm:top-20 sm:bottom-28"
+                className="pointer-events-none absolute inset-5 opacity-40 sm:inset-7"
               >
                 <StatMotif type={stat.motif} />
               </span>
