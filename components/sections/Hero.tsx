@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { site } from "@/content/site";
+import { HeroHeadline } from "@/components/sections/HeroHeadline";
 import { PillLink } from "@/components/ui/PillLink";
 import { TagPill } from "@/components/ui/TagPill";
 
@@ -7,9 +8,7 @@ export function Hero() {
   return (
     <section className="flex flex-col items-center px-4 py-16 text-center sm:py-24">
       <TagPill>{site.hero.eyebrow}</TagPill>
-      <h1 className="display-type mt-7 max-w-[13ch] text-[clamp(3.25rem,10vw,9rem)]">
-        {site.hero.headline}
-      </h1>
+      <HeroHeadline>{site.hero.headline}</HeroHeadline>
       <p className="reveal mt-7 max-w-[46ch] text-lg leading-relaxed sm:text-xl">
         {site.hero.subline}
       </p>
