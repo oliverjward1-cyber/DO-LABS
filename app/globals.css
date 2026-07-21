@@ -78,8 +78,18 @@
   border-top: 1.5px dotted var(--color-obsidian);
 }
 
+/* Page surface: HospoPilot-style dot + grid texture over the base colour —
+   a fine 22px dot grid on top of a larger 88px line grid. Subtle, cool. */
 html {
   background-color: var(--color-pumice);
+  background-image:
+    radial-gradient(#e2e8ec 1px, transparent 1px),
+    linear-gradient(to right, #ecf0f2 1px, transparent 1px),
+    linear-gradient(to bottom, #ecf0f2 1px, transparent 1px);
+  background-size:
+    22px 22px,
+    88px 88px,
+    88px 88px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -89,7 +99,7 @@ html {
 }
 
 body {
-  background-color: var(--color-pumice);
+  background-color: transparent; /* let the html texture show through */
   color: var(--color-obsidian);
   font-family: var(--font-body);
   font-weight: 500; /* DM Sans stays 500 everywhere — never 400/700 */
