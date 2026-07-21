@@ -11,7 +11,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 // Caldera palette — kept local so this route has no dependency on globals.css.
-const EMBER = "#fc5000";
+const EMBER = "#006434";
 const PUMICE = "#f7f0e1";
 const OBSIDIAN = "#23212c";
 const CHALK = "#ffffff";

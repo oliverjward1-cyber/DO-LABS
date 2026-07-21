@@ -7,7 +7,7 @@
  */
 @theme {
   /* Colors */
-  --color-ember: #fc5000; /* primary buttons, stat cards — the only aggressive accent */
+  --color-ember: #006434; /* primary buttons, stat cards — Pine green (was ember orange) */
   --color-plasma: #524ae9; /* halftone blocks ONLY — never on buttons/controls/text */
   --color-sulfur: #f5f28e; /* tag/badge pills only */
   --color-limestone: #fffdf6; /* card surfaces, nav pill, footer pill — warm snow */
@@ -39,8 +39,8 @@
   background-image:
     radial-gradient(
       120% 130% at 90% 0%,
-      rgb(252 80 0 / 0.9) 0%,
-      rgb(252 80 0 / 0) 55%
+      rgb(0 100 52 / 0.9) 0%,
+      rgb(0 100 52 / 0) 55%
     ),
     linear-gradient(135deg, var(--color-plasma) 0%, var(--color-ember) 100%);
 }
@@ -51,8 +51,8 @@
   background-image:
     radial-gradient(
       110% 120% at 92% 105%,
-      rgb(252 80 0 / 0.4) 0%,
-      rgb(252 80 0 / 0) 45%
+      rgb(0 100 52 / 0.4) 0%,
+      rgb(0 100 52 / 0) 45%
     ),
     linear-gradient(
       135deg,
