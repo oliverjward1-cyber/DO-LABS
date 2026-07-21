@@ -14,8 +14,8 @@ export type Cta = {
 };
 
 export type Stat = {
-  /** Big Anton number, e.g. "2" or "∞" */
-  value: string;
+  /** Big Anton value, e.g. "3", "'25" or "Devon" */
+  num: string;
   label: string;
 };
 
@@ -57,7 +57,7 @@ export const site = {
     eyebrow: "A two-person software studio",
     headline: "We build software worth shipping",
     subline:
-      "Drew writes the code. Ollie ran the kitchens. Together we turn problems we know first-hand into small, honest products — and ship them in public.",
+      "Drew writes the code. Ollie's still on the line. Together we turn problems we know first-hand into small, honest products — and ship them in public.",
     primaryCta: { label: "See the products", href: "#products" } satisfies Cta,
     secondaryCta: {
       label: "Say hello",
@@ -76,10 +76,10 @@ export const site = {
   },
 
   stats: [
-    { value: "2", label: "Founders" },
-    { value: "2", label: "Products live" },
-    { value: "'25", label: "Studio started" },
-    { value: "∞", label: "Ideas in branches" },
+    { num: "3", label: "Products in the works" },
+    { num: "'25", label: "Studio started" },
+    { num: "Devon", label: "Where we build" },
+    { num: "TODO", label: "Commits shipped" },
   ] satisfies Stat[],
 
   products: {
@@ -99,6 +99,13 @@ export const site = {
           "A pocket-sized wireless recovery device for everyday aches and pains. Drug-free relief that fits into normal life.",
         link: { label: "Coming soon", href: "#" },
       },
+      {
+        name: "F.R.E.D",
+        tag: "In development",
+        description:
+          "Food data without the faff. Look up what's actually in your meals and make calls that fit your goals — no spreadsheets, no guesswork.",
+        link: { label: "Coming soon", href: "#" },
+      },
     ] satisfies Product[],
   },
 
@@ -113,12 +120,12 @@ export const site = {
       {
         name: "Ollie",
         role: "Chef turned builder",
-        bio: "Ollie spent years on the line in professional kitchens before crossing over to software. He's the domain half of the studio — the reason HospoPilot works the way a real kitchen does — and the first user of everything we ship.",
+        bio: "A working chef building his way out of the kitchen with AI. Ecommerce background, restaurant scars, and the first user of everything we ship.",
       },
       {
         name: "Drew",
         role: "The developer half",
-        bio: "Drew turns ideas into working products. He looks after the code, the infrastructure and the details — fast pages, small tools, and software that stays out of your way.",
+        bio: "Co-founder and the technical half — code, infrastructure, and a steady stream of ideas. Increasingly the one who'll actually talk to customers.",
       },
     ] satisfies Founder[],
   },

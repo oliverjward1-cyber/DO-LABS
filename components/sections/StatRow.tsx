@@ -11,7 +11,7 @@ export function StatRow() {
           >
             <dt className="order-2 text-base">{stat.label}</dt>
             <dd className="display-type order-1 text-[clamp(2.75rem,5.5vw,4.5rem)]">
-              {stat.value}
+              {stat.num}
             </dd>
           </div>
         ))}

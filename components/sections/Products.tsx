@@ -7,7 +7,7 @@ export function Products() {
   return (
     <section id="products" className="scroll-mt-6">
       <Kicker>{site.products.kicker}</Kicker>
-      <div className="mt-6 grid gap-4 md:grid-cols-2 lg:gap-5">
+      <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
         {site.products.items.map((product) => (
           <article
             key={product.name}
