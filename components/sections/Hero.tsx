@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { site } from "@/content/site";
 import { PillLink } from "@/components/ui/PillLink";
 import { TagPill } from "@/components/ui/TagPill";
@@ -9,10 +10,13 @@ export function Hero() {
       <h1 className="display-type mt-7 max-w-[13ch] text-[clamp(3.25rem,10vw,9rem)]">
         {site.hero.headline}
       </h1>
-      <p className="mt-7 max-w-[46ch] text-lg leading-relaxed sm:text-xl">
+      <p className="reveal mt-7 max-w-[46ch] text-lg leading-relaxed sm:text-xl">
         {site.hero.subline}
       </p>
-      <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+      <div
+        className="reveal mt-9 flex flex-wrap items-center justify-center gap-4"
+        style={{ "--reveal-delay": "80ms" } as CSSProperties}
+      >
         <PillLink href={site.hero.primaryCta.href}>
           {site.hero.primaryCta.label}
         </PillLink>

@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { RevealController } from "@/components/RevealController";
 import { BuildInPublic } from "@/components/sections/BuildInPublic";
 import { HalftoneHero } from "@/components/sections/HalftoneHero";
 import { Hero } from "@/components/sections/Hero";
@@ -22,13 +23,15 @@ export default function Home() {
       <main id="main">
         <Hero />
         <div className="flex flex-col gap-4 lg:gap-5">
-          <HalftoneHero />
+          <div className="reveal">
+            <HalftoneHero />
+          </div>
           <StatRow />
         </div>
         <div className="mt-20 sm:mt-28">
           <Products />
         </div>
-        <div className="mt-20 sm:mt-28">
+        <div className="reveal mt-20 sm:mt-28">
           <BuildInPublic />
         </div>
         <div className="my-20 sm:my-28">
@@ -36,9 +39,10 @@ export default function Home() {
         </div>
         <Studio />
       </main>
-      <div className="mt-20 sm:mt-28">
+      <div className="reveal mt-20 sm:mt-28">
         <Footer />
       </div>
+      <RevealController />
     </div>
   );
 }

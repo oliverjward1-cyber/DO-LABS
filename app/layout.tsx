@@ -44,7 +44,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${anton.variable} ${dmSans.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        {/* Without JS the reveal observer never runs — force the resting state. */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;translate:none!important}`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }

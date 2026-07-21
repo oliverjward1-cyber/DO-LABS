@@ -118,6 +118,59 @@ body {
   outline-color: var(--color-obsidian);
 }
 
+/* ── Motion ──────────────────────────────────────────────────────────────
+   Everything here is gated on prefers-reduced-motion: no-preference, so
+   reduced-motion users get the final resting state with no animation. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Scroll-reveal: RevealController flips data-revealed as blocks enter view.
+     Uses the individual `translate` property so a hover `scale` composes on
+     the same element without clobbering it. */
+  .reveal {
+    opacity: 0;
+    translate: 0 16px;
+    transition:
+      opacity 0.5s ease-out var(--reveal-delay, 0ms),
+      translate 0.5s ease-out var(--reveal-delay, 0ms),
+      scale 0.2s ease-out;
+  }
+  .reveal[data-revealed="true"] {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  /* Halftone blocks breathe: a slow gradient drift plus a slow dot drift. */
+  .halftone-anim {
+    background-size:
+      120% 120%,
+      120% 120%;
+    animation: halftoneDrift 18s ease-in-out infinite;
+  }
+  @keyframes halftoneDrift {
+    0%,
+    100% {
+      background-position:
+        0% 50%,
+        0% 50%;
+    }
+    50% {
+      background-position:
+        100% 50%,
+        100% 50%;
+    }
+  }
+  .halftone-dots {
+    animation: dotsDrift 24s linear infinite;
+  }
+  @keyframes dotsDrift {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 26px 26px;
+    }
+  }
+}
+
 ::selection {
   background-color: var(--color-ember);
   color: var(--color-chalk);

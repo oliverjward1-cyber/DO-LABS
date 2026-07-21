@@ -6,7 +6,7 @@ import { site } from "@/content/site";
  */
 export function BuildInPublic() {
   return (
-    <section className="halftone-surface-plasma relative overflow-hidden rounded-card">
+    <section className="halftone-surface-plasma halftone-anim relative overflow-hidden rounded-card">
       <div aria-hidden className="halftone-dots absolute inset-0 opacity-60" />
       {/* Subtle dark scrim so chalk text stays legible where the gradient
           crosses its bright mid-tones. Not a shadow — a flat overlay. */}

@@ -11,7 +11,7 @@ import { site } from "@/content/site";
 export function HalftoneHero() {
   return (
     <section
-      className="halftone-surface relative flex min-h-[250px] items-end overflow-hidden rounded-card sm:min-h-[320px]"
+      className="halftone-surface halftone-anim relative flex min-h-[250px] items-end overflow-hidden rounded-card sm:min-h-[320px]"
       aria-label={site.halftoneHero.label}
     >
       <div aria-hidden className="halftone-dots absolute inset-0" />
