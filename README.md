@@ -48,8 +48,8 @@ npm run build   # production build
 
 Flat, warm, bold, shadowless. Colors: ember `#fc5000`, plasma `#524ae9`
 (halftone blocks only), sulfur `#f5f28e` (tags only), limestone
-`#f7f6f2`, pumice `#f8fafb` (page bg, matched to HospoPilot), obsidian
-`#070607`, chalk `#ffffff`.
+`#fffdf6` (warm snow cards), pumice `#f7f0e1` (warm Paper cream page bg),
+obsidian `#23212c` (warm charcoal text), chalk `#ffffff`.
 Radii: 40px blocks, full pills — nothing in between. Anton is always
 ALL CAPS with +0.02em tracking and is never set below 26px; DM Sans is
 weight 500 everywhere. No shadows, ever.

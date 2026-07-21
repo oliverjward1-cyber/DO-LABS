@@ -12,8 +12,8 @@ export const contentType = "image/png";
 
 // Caldera palette — kept local so this route has no dependency on globals.css.
 const EMBER = "#fc5000";
-const PUMICE = "#f8fafb";
-const OBSIDIAN = "#070607";
+const PUMICE = "#f7f0e1";
+const OBSIDIAN = "#23212c";
 const CHALK = "#ffffff";
 
 export default async function OpengraphImage() {
