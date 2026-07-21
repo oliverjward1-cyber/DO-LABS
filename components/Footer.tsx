@@ -2,7 +2,7 @@ import { site } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="rounded-card bg-limestone px-8 py-10 sm:px-12 sm:py-14">
+    <footer className="rounded-card border border-obsidian/10 bg-limestone px-8 py-10 sm:px-12 sm:py-14">
       <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <p className="display-type text-[clamp(3.5rem,11vw,9rem)]">
           {site.footer.wordmark}

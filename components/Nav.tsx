@@ -6,7 +6,7 @@ export function Nav() {
     <header>
       <nav
         aria-label="Main"
-        className="flex items-center justify-between gap-4 rounded-pill bg-limestone py-3 pl-7 pr-3"
+        className="flex items-center justify-between gap-4 rounded-pill border border-obsidian/10 bg-limestone py-3 pl-7 pr-3"
       >
         <a href="#top" className="display-type text-[26px]">
           {site.wordmark}

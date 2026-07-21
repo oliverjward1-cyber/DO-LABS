@@ -11,7 +11,7 @@
   --color-plasma: #524ae9; /* halftone blocks ONLY — never on buttons/controls/text */
   --color-sulfur: #f5f28e; /* tag/badge pills only */
   --color-limestone: #f7f6f2; /* card surfaces, nav pill, footer pill */
-  --color-pumice: #e2e2df; /* page background */
+  --color-pumice: #f8fafb; /* page background — matched to HospoPilot's marketing site */
   --color-obsidian: #070607; /* all text, borders */
   --color-chalk: #ffffff; /* text on dark/ember/plasma surfaces */
 
