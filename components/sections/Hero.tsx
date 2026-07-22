@@ -23,6 +23,17 @@ export function Hero() {
           {site.hero.secondaryCta.label}
         </PillLink>
       </div>
+      <a
+        href={site.hero.status.href}
+        className="reveal mt-8 inline-flex items-center gap-2.5 rounded-pill border border-obsidian/15 px-4 py-2 text-sm text-obsidian motion-safe:transition-colors hover:border-obsidian/40"
+        style={{ "--reveal-delay": "160ms" } as CSSProperties}
+      >
+        <span aria-hidden className="relative flex h-2.5 w-2.5">
+          <span className="absolute inline-flex h-full w-full rounded-pill bg-ember opacity-75 motion-safe:animate-ping" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-pill bg-ember" />
+        </span>
+        {site.hero.status.label}
+      </a>
     </section>
   );
 }

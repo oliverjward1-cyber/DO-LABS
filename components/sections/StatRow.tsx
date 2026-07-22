@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { site, type StatMotif as StatMotifType } from "@/content/site";
+import { commitsShipped } from "@/lib/commits";
 import { CountUp } from "@/components/ui/CountUp";
 import { StatMotif } from "@/components/ui/StatMotif";
 
@@ -15,12 +16,16 @@ const span: Record<StatMotifType, string> = {
 };
 
 export function StatRow() {
+  // Real commit count at build time (falls back to content on shallow clones).
+  const commits = commitsShipped();
+
   return (
     <section aria-label={site.statRow.label}>
       <dl className="grid grid-cols-2 gap-4 [grid-auto-rows:minmax(150px,auto)] lg:grid-cols-6 lg:gap-5 lg:[grid-auto-rows:190px]">
         {site.stats.map((stat, i) => {
+          const num = stat.motif === "commits" ? commits : stat.num;
           // Only pure integers count up; '25, DEVON, ∞ just fade in.
-          const numeric = /^\d+$/.test(stat.num);
+          const numeric = /^\d+$/.test(num);
           return (
             <div
               key={stat.label}
@@ -40,7 +45,7 @@ export function StatRow() {
               {/* Label small on top, big Anton number planted at the bottom. */}
               <dt className="relative z-10 text-base">{stat.label}</dt>
               <dd className="relative z-10 display-type text-[clamp(2.75rem,5.5vw,4.5rem)]">
-                {numeric ? <CountUp value={stat.num} /> : stat.num}
+                {numeric ? <CountUp value={num} /> : num}
               </dd>
             </div>
           );

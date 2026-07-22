@@ -69,6 +69,10 @@ export const site = {
       label: "Say hello",
       href: "mailto:hello@dolabs.co.uk",
     } satisfies Cta,
+    status: {
+      label: "Available for new projects",
+      href: "mailto:hello@dolabs.co.uk",
+    } satisfies Cta,
   },
 
   halftoneHero: {
@@ -85,8 +89,9 @@ export const site = {
     { num: "3", label: "Products in the works", motif: "bars" },
     { num: "'25", label: "Studio started", motif: "timeline" },
     { num: "Devon", label: "Where we build", motif: "hills" },
-    // Commits shipped — edit this number by hand (git rev-list --count HEAD).
-    { num: "6", label: "Commits shipped", motif: "commits" },
+    // Commits shipped — counted live at build (git rev-list --count HEAD);
+    // this value is only the fallback used on shallow CI checkouts.
+    { num: "18", label: "Commits shipped", motif: "commits" },
   ] satisfies Stat[],
 
   products: {
