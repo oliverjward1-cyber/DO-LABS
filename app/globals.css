@@ -7,13 +7,13 @@
  */
 @theme {
   /* Colors */
-  --color-ember: #006434; /* primary buttons, stat cards — Pine green (was ember orange) */
-  --color-plasma: #524ae9; /* halftone blocks ONLY — never on buttons/controls/text */
+  --color-ember: #ffd21e; /* accent — buttons, stat cards (electric yellow) */
+  --color-plasma: #524ae9; /* halftone blocks */
   --color-sulfur: #f5f28e; /* tag/badge pills only */
-  --color-limestone: #fffdf6; /* card surfaces, nav pill, footer pill — warm snow */
-  --color-pumice: #f7f0e1; /* page background — warm Paper cream (Raus vibe) */
-  --color-obsidian: #23212c; /* all text, borders — warm Charcoal, not pure black */
-  --color-chalk: #ffffff; /* text on dark/ember/plasma surfaces */
+  --color-limestone: #f7f4ea; /* cream card surfaces on the electric canvas */
+  --color-pumice: #2537e6; /* page background — electric blue */
+  --color-obsidian: #15132a; /* dark text + borders (on light / yellow surfaces) */
+  --color-chalk: #ffffff; /* default text on the blue canvas */
 
   /* Fonts (loaded via next/font in app/layout.tsx) */
   --font-display: var(--font-anton); /* Anton 400 — ALL CAPS, +0.02em, lh 0.94, never below 26px */
@@ -39,8 +39,8 @@
   background-image:
     radial-gradient(
       120% 130% at 90% 0%,
-      rgb(0 100 52 / 0.9) 0%,
-      rgb(0 100 52 / 0) 55%
+      rgb(255 210 30/ 0.9) 0%,
+      rgb(255 210 30/ 0) 55%
     ),
     linear-gradient(135deg, var(--color-plasma) 0%, var(--color-ember) 100%);
 }
@@ -51,8 +51,8 @@
   background-image:
     radial-gradient(
       110% 120% at 92% 105%,
-      rgb(0 100 52 / 0.4) 0%,
-      rgb(0 100 52 / 0) 45%
+      rgb(255 210 30/ 0.4) 0%,
+      rgb(255 210 30/ 0) 45%
     ),
     linear-gradient(
       135deg,
@@ -73,33 +73,24 @@
   mix-blend-mode: screen;
 }
 
-/* Dotted (not dashed) 1.5px obsidian divider. */
+/* Dotted (not dashed) 1.5px divider — chalk, for the electric canvas. */
 @utility divider-dotted {
-  border-top: 1.5px dotted var(--color-obsidian);
+  border-top: 1.5px dotted rgb(255 255 255 / 0.4);
 }
 
-/* Subtle chalk dot texture for the solid stat cards. */
+/* Subtle dark dot texture for the solid (yellow) stat cards. */
 @utility card-dots {
   background-image: radial-gradient(
     circle,
-    rgb(255 255 255 / 0.2) 1px,
+    rgb(0 0 0 / 0.07) 1px,
     transparent 1.6px
   );
   background-size: 15px 15px;
 }
 
-/* Page surface: HospoPilot-style dot + grid texture over the base colour —
-   a fine 22px dot grid on top of a larger 88px line grid. Subtle, cool. */
+/* Flat, saturated electric-blue canvas — the colour is the brand. */
 html {
   background-color: var(--color-pumice);
-  background-image:
-    radial-gradient(#d8c8a4 1.5px, transparent 1.6px),
-    linear-gradient(to right, #e7dcc2 1px, transparent 1px),
-    linear-gradient(to bottom, #e7dcc2 1px, transparent 1px);
-  background-size:
-    22px 22px,
-    88px 88px,
-    88px 88px;
   /* Clip the exploding hero headline at the viewport edge. `clip` (not
      hidden) doesn't start a scroll container, so the sticky nav still works. */
   overflow-x: clip;
@@ -112,8 +103,8 @@ html {
 }
 
 body {
-  background-color: transparent; /* let the html texture show through */
-  color: var(--color-obsidian);
+  background-color: transparent;
+  color: var(--color-chalk); /* light text on the electric-blue canvas */
   font-family: var(--font-body);
   font-weight: 500; /* DM Sans stays 500 everywhere — never 400/700 */
   /* Clip (not hidden) so the exploding hero headline never adds a scrollbar,
@@ -221,5 +212,5 @@ body {
 
 ::selection {
   background-color: var(--color-ember);
-  color: var(--color-chalk);
+  color: var(--color-obsidian);
 }

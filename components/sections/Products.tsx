@@ -4,7 +4,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { TagPill } from "@/components/ui/TagPill";
 
 const cardBase =
-  "group flex h-full flex-col items-start rounded-card border border-obsidian/10 bg-limestone p-8 sm:p-10 motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-1";
+  "group flex h-full flex-col items-start rounded-card border border-obsidian/10 bg-limestone text-obsidian p-8 sm:p-10 motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-1";
 
 const ghostPill =
   "mt-auto inline-flex items-center justify-center rounded-pill border-[1.5px] border-obsidian px-7 py-3.5 text-base";
@@ -20,7 +20,7 @@ export function Products() {
           const links = product.link.href !== "#";
           const inner = (
             <>
-              <TagPill className="motion-safe:transition-colors group-hover:bg-ember group-hover:text-chalk">
+              <TagPill className="motion-safe:transition-colors group-hover:bg-ember group-hover:text-obsidian">
                 {product.tag}
               </TagPill>
               <h3 className="display-type mt-6 text-[clamp(2rem,3.5vw,3rem)]">

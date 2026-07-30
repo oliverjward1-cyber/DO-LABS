@@ -11,10 +11,12 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 // Caldera palette — kept local so this route has no dependency on globals.css.
-const EMBER = "#006434";
-const PUMICE = "#f7f0e1";
-const OBSIDIAN = "#23212c";
-const CHALK = "#ffffff";
+// Electric theme: blue canvas, white on-canvas text, yellow accent, dark ink
+// on the yellow mark/pill.
+const EMBER = "#ffd21e";
+const PUMICE = "#2537e6";
+const OBSIDIAN = "#ffffff";
+const CHALK = "#15132a";
 
 export default async function OpengraphImage() {
   const fontDir = join(process.cwd(), "app/_og/fonts");

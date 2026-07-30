@@ -30,7 +30,7 @@ export function StatRow() {
             <div
               key={stat.label}
               style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
-              className={`reveal stat-card relative flex flex-col justify-between overflow-hidden rounded-card bg-ember p-7 text-chalk motion-safe:hover:scale-[1.02] sm:p-8 ${span[stat.motif]}`}
+              className={`reveal stat-card relative flex flex-col justify-between overflow-hidden rounded-card bg-ember p-7 text-obsidian motion-safe:hover:scale-[1.02] sm:p-8 ${span[stat.motif]}`}
             >
               {/* Subtle dot texture, tying the cards to the halftone band. */}
               <span aria-hidden className="card-dots pointer-events-none absolute inset-0" />

@@ -14,7 +14,7 @@ export function Studio() {
           <article
             key={founder.name}
             style={{ "--reveal-delay": `${i * 80}ms` } as CSSProperties}
-            className="reveal flex flex-col items-start rounded-card border border-obsidian/10 bg-limestone p-8 sm:p-10"
+            className="reveal flex flex-col items-start rounded-card border border-obsidian/10 bg-limestone text-obsidian p-8 sm:p-10"
           >
             <TagPill>{founder.role}</TagPill>
             <h3 className="display-type mt-6 text-[clamp(2rem,3.5vw,3rem)]">

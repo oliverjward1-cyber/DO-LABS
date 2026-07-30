@@ -25,7 +25,7 @@ export function Hero() {
       </div>
       <a
         href={site.hero.status.href}
-        className="reveal mt-8 inline-flex items-center gap-2.5 rounded-pill border border-obsidian/15 px-4 py-2 text-sm text-obsidian motion-safe:transition-colors hover:border-obsidian/40"
+        className="reveal mt-8 inline-flex items-center gap-2.5 rounded-pill border border-chalk/30 px-4 py-2 text-sm text-chalk motion-safe:transition-colors hover:border-chalk/60"
         style={{ "--reveal-delay": "160ms" } as CSSProperties}
       >
         <span aria-hidden className="relative flex h-2.5 w-2.5">

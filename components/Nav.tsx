@@ -33,7 +33,7 @@ export function Nav() {
         <nav
           aria-label="Main"
           data-stuck={stuck}
-          className={`flex items-center justify-between gap-4 rounded-pill border bg-limestone pl-7 pr-3 motion-safe:transition-all motion-safe:duration-300 ${
+          className={`flex items-center justify-between gap-4 rounded-pill border bg-limestone text-obsidian pl-7 pr-3 motion-safe:transition-all motion-safe:duration-300 ${
             stuck
               ? "border-obsidian/15 py-2 supports-[backdrop-filter]:bg-limestone/80 supports-[backdrop-filter]:backdrop-blur-md"
               : "border-obsidian/10 py-3"

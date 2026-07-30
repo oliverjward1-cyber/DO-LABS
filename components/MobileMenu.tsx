@@ -92,7 +92,7 @@ export function MobileMenu({
         role="dialog"
         aria-modal="true"
         aria-label="Menu"
-        className={`absolute inset-x-4 top-4 rounded-card border border-obsidian/10 bg-limestone p-6 motion-safe:transition-all motion-safe:duration-300 ${
+        className={`absolute inset-x-4 top-4 rounded-card border border-obsidian/10 bg-limestone text-obsidian p-6 motion-safe:transition-all motion-safe:duration-300 ${
           open ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
         }`}
       >
