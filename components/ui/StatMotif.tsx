@@ -6,7 +6,7 @@ const d = (ms: string): CSSProperties => ({ "--draw-delay": ms }) as CSSProperti
 const n = (ms: string): CSSProperties => ({ "--node-delay": ms }) as CSSProperties;
 
 const shared = {
-  className: "stat-motif h-full w-full text-obsidian",
+  className: "stat-motif h-full w-full text-chalk",
   fill: "none" as const,
   stroke: "currentColor",
   strokeLinecap: "round" as const,

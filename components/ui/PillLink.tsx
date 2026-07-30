@@ -10,9 +10,10 @@ const base =
   "inline-flex items-center justify-center rounded-pill px-7 py-3.5 text-base motion-safe:transition-colors";
 
 const variants = {
-  primary: "bg-ember text-obsidian hover:bg-obsidian hover:text-chalk",
+  primary:
+    "border-[1.5px] border-obsidian bg-gold text-obsidian hover:bg-obsidian hover:text-chalk",
   ghost:
-    "border-[1.5px] border-chalk text-chalk hover:bg-chalk hover:text-obsidian",
+    "border-[1.5px] border-obsidian text-obsidian hover:bg-obsidian hover:text-chalk",
 };
 
 export function PillLink({

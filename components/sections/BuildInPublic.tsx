@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 /** Bold flat yellow statement block. */
 export function BuildInPublic() {
   return (
-    <section className="overflow-hidden rounded-card bg-ember text-obsidian">
+    <section className="overflow-hidden rounded-card bg-ember text-chalk">
       <div className="flex flex-col gap-6 p-8 py-16 sm:p-12 sm:py-24 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
         <h2 className="display-type max-w-[10ch] text-[clamp(2.75rem,7vw,6rem)]">
           {site.buildInPublic.title}

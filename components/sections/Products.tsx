@@ -20,7 +20,7 @@ export function Products() {
           const links = product.link.href !== "#";
           const inner = (
             <>
-              <TagPill className="motion-safe:transition-colors group-hover:bg-ember group-hover:text-obsidian">
+              <TagPill className="motion-safe:transition-colors group-hover:bg-ember group-hover:text-chalk">
                 {product.tag}
               </TagPill>
               <h3 className="display-type mt-6 text-[clamp(2rem,3.5vw,3rem)]">

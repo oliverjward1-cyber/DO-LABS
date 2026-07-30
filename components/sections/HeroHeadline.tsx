@@ -39,7 +39,7 @@ export function HeroHeadline({ children }: { children: ReactNode }) {
   return (
     <h1
       ref={ref}
-      className="hero-headline display-type mt-7 max-w-[13ch] text-ember text-[clamp(3.25rem,10vw,9rem)]"
+      className="hero-headline display-type mt-7 max-w-[13ch] text-[clamp(3.25rem,10vw,9rem)]"
     >
       {children}
     </h1>

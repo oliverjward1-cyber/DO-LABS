@@ -40,7 +40,7 @@ export function Nav() {
               : "border-obsidian/10 py-3"
           }`}
         >
-          <a href="#top" className="display-type text-[26px]">
+          <a href="#top" className="display-type text-[26px] text-ember">
             {site.wordmark}
           </a>
 

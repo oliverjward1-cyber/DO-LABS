@@ -7,13 +7,14 @@
  */
 @theme {
   /* Colors */
-  --color-ember: #ffd21e; /* accent — buttons, stat cards (electric yellow) */
-  --color-plasma: #524ae9; /* halftone blocks */
-  --color-sulfur: #f5f28e; /* tag/badge pills only */
-  --color-limestone: #f7f4ea; /* cream card surfaces on the electric canvas */
-  --color-pumice: #2537e6; /* page background — electric blue */
-  --color-obsidian: #15132a; /* dark text + borders (on light / yellow surfaces) */
-  --color-chalk: #ffffff; /* default text on the blue canvas */
+  --color-ember: #2b39e6; /* electric blue — stat cards, feature blocks, wordmark */
+  --color-gold: #c8952a; /* primary CTA buttons (Bustle-style, with dark border) */
+  --color-plasma: #524ae9; /* (unused) */
+  --color-sulfur: #e3e6ff; /* tag/badge pills — light blue tint */
+  --color-limestone: #fffdf8; /* card surfaces, nav pill — near-white on cream */
+  --color-pumice: #f7f4ea; /* page background — warm cream (Bustle paper) */
+  --color-obsidian: #1b1a17; /* charcoal text + borders */
+  --color-chalk: #ffffff; /* text on blue surfaces */
 
   /* Fonts (loaded via next/font in app/layout.tsx) */
   --font-display: var(--font-anton); /* Anton 400 — ALL CAPS, +0.02em, lh 0.94, never below 26px */
@@ -73,16 +74,16 @@
   mix-blend-mode: screen;
 }
 
-/* Dotted (not dashed) 1.5px divider — chalk, for the electric canvas. */
+/* Dotted (not dashed) 1.5px charcoal divider on the cream canvas. */
 @utility divider-dotted {
-  border-top: 1.5px dotted rgb(255 255 255 / 0.4);
+  border-top: 1.5px dotted rgb(27 26 23 / 0.3);
 }
 
-/* Subtle dark dot texture for the solid (yellow) stat cards. */
+/* Subtle chalk dot texture for the solid (blue) stat cards. */
 @utility card-dots {
   background-image: radial-gradient(
     circle,
-    rgb(0 0 0 / 0.07) 1px,
+    rgb(255 255 255 / 0.2) 1px,
     transparent 1.6px
   );
   background-size: 15px 15px;
@@ -104,7 +105,7 @@ html {
 
 body {
   background-color: transparent;
-  color: var(--color-chalk); /* light text on the electric-blue canvas */
+  color: var(--color-obsidian); /* charcoal text on the cream canvas */
   font-family: var(--font-body);
   font-weight: 500; /* DM Sans stays 500 everywhere — never 400/700 */
   /* Clip (not hidden) so the exploding hero headline never adds a scrollbar,
@@ -212,5 +213,5 @@ body {
 
 ::selection {
   background-color: var(--color-ember);
-  color: var(--color-obsidian);
+  color: var(--color-chalk);
 }

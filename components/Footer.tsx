@@ -3,7 +3,7 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export function Footer() {
   return (
-    <footer className="text-chalk">
+    <footer className="text-obsidian">
       <div aria-hidden className="divider-dotted" />
       <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
         <ul className="flex flex-col gap-2 text-base">
@@ -22,10 +22,10 @@ export function Footer() {
             </li>
           ))}
         </ul>
-        <SocialLinks variant="light" />
+        <SocialLinks variant="dark" />
       </div>
       {/* Giant edge-to-edge wordmark. */}
-      <p className="display-type mt-10 text-[clamp(4rem,23vw,17rem)] leading-[0.82]">
+      <p className="display-type mt-10 text-[clamp(4rem,23vw,17rem)] leading-[0.82] text-ember">
         {site.footer.wordmark}
       </p>
     </footer>
