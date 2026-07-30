@@ -17,7 +17,7 @@
   --color-chalk: #ffffff; /* text on blue surfaces */
 
   /* Fonts (loaded via next/font in app/layout.tsx) */
-  --font-display: var(--font-anton); /* Anton 400 — ALL CAPS, +0.02em, lh 0.94, never below 26px */
+  --font-display: var(--font-display-face); /* Baloo 2 800 — rounded chunky display */
   --font-body: var(--font-dm-sans); /* DM Sans 500 only */
 
   /* Radii: cards/blocks/footer 40px; pills full. Nothing between 1px and 39px. */
@@ -28,10 +28,10 @@
 /* Display type: the only way Anton is used. Letter-spacing is positive. */
 @utility display-type {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 0.94;
+  letter-spacing: 0;
+  line-height: 0.95;
 }
 
 /* Halftone treatment: plasma→ember 135deg gradient with a radial ember

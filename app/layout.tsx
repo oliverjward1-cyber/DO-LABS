@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, DM_Sans } from "next/font/google";
+import { Baloo_2, DM_Sans } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const anton = Anton({
-  variable: "--font-anton",
-  weight: "400",
+const display = Baloo_2({
+  variable: "--font-display-face",
+  weight: "800",
   subsets: ["latin"],
 });
 
@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${anton.variable} ${dmSans.variable} antialiased`}>
+    <html lang="en" className={`${display.variable} ${dmSans.variable} antialiased`}>
       <body>
         {/* Without JS the reveal observer never runs — force the resting state. */}
         <noscript>

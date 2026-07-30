@@ -25,7 +25,7 @@ export function Footer() {
         <SocialLinks variant="dark" />
       </div>
       {/* Giant edge-to-edge wordmark. */}
-      <p className="display-type mt-10 text-[clamp(4rem,23vw,17rem)] leading-[0.82] text-ember">
+      <p className="display-type mt-10 text-[clamp(2.75rem,13vw,8.5rem)] leading-[0.85] text-ember">
         {site.footer.wordmark}
       </p>
     </footer>
