@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
 import { PillLink } from "@/components/ui/PillLink";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { MobileMenu } from "@/components/MobileMenu";
 
 const linkClass = "text-base hover:underline hover:underline-offset-4";
@@ -50,17 +51,7 @@ export function Nav() {
                   {link.label}
                 </a>
               ))}
-              {site.social.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={linkClass}
-                >
-                  {link.label}
-                </a>
-              ))}
+              <SocialLinks variant="dark" />
               <PillLink href={site.nav.cta.href} className="px-6 py-2.5">
                 {site.nav.cta.label}
               </PillLink>
